@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <title>Gastronomous</title>
+  <style>
+    .check {
+      color: rgba(73,125,208,0.9);
+    }
+    .hidden {
+      display: none;
+    }
+    .toggle_radio{
+      position: relative;
+      background: rgba(73,125,208,0.4);
+      margin: 4px auto;
+      overflow: hidden;
+      padding: 0 !important;
+      border-radius: 50px;
+      position: relative;
+      height: 40px;
+      width: 318px;
+    }
+    .toggle_radio > * {
+      float: left;
+    }
+    .toggle_radio input[type=radio]{
+      display: none;
+    }
+    .toggle_radio label{
+      color: rgba(73,125,208,.9);
+      z-index: 0;
+      display: block;
+      width: 100px;
+      height: 35px;
+      margin-left: 5px;
+      border-radius: 50px;
+      cursor: pointer;
+      z-index: 1;
+      text-align: center;
+    }
+    .toggle_option_slider{
+      width: 100px;
+      height: 35px;
+      position: absolute;
+      top: 3px;
+      border-radius: 50px;
+      transition: all .4s ease;
+    }
+
+    #pasta-small:checked ~ .toggle_option_slider,
+    #sauce-reduced:checked ~ .toggle_option_slider {;
+      left: 3px;
+    }
+    #pasta-medium:checked ~ .toggle_option_slider,
+    #sauce-normal:checked ~ .toggle_option_slider {
+      left: 109px;
+    }
+    #pasta-large:checked ~ .toggle_option_slider,
+    #sauce-extra:checked ~ .toggle_option_slider {
+      left: 215px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="jumbotron jumbotron-fluid">
+    <h1 class="display-4">Gastronomous</h1>
+    <p class="lead">Were technology and food marry</p>
+    <p>All hail the tastiest child</p>
+  </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <form id="meal-form">
+          <div class="row card">
+            <div class="card-header" id="headingOne">
+              <h5 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Select you pasta
+                </button>
+              </h5>
+            </div>
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#meal-form">
+              <div class="card-body">
+                <div class="row form-group pic-radio">
+                  <div class="col-md-4 col-sm-6">
+                    <input type="radio" name="pasta-type" id="pasta-fusilli" value="fusilli" class="hidden" checked>
+                    <label class="btn btn-primary btn-success" for="pasta-fusilli"><img src="img/fusilli.png" alt="Fusilli" class="img-check"></label>
+                  </div>
+                  <div class="col-md-4 col-sm-6">
+                    <input type="radio" name="pasta-type" id="pasta-pennette" value="pennette" class="hidden">
+                    <label class="btn btn-primary" for="pasta-pennette"><img src="img/pennette-rigate.png" alt="Pennette Rigate" class="img-check"></label>
+                  </div>
+                  <div class="col-md-4 col-sm-6">
+                    <input type="radio" name="pasta-type" id="pasta-rigatoni" value="rigatoni" class="hidden">
+                    <label class="btn btn-primary" for="pasta-rigatoni"><img src="img/rigatoni.png" alt="Rigatoni" class="img-check"></label>
+                  </div>
+  		          </div>
+                <div class="row form-group toggle_radio">
+                  <input class="form-check-input toggle_option" type="radio" name="pasta-amount" id="pasta-small" value="small">
+                  <label class="form-check-label col-form-label-lg" for="pasta-small">Small</label>
+                  <input class="form-check-input toggle_option" type="radio" name="pasta-amount" id="pasta-medium" value="medium" checked>
+                  <label class="form-check-label col-form-label-lg" for="pasta-medium">Medium</label>
+                  <input class="form-check-input toggle_option" type="radio" name="pasta-amount" id="pasta-large" value="large">
+                  <label class="form-check-label col-form-label-lg" for="pasta-large">Large</label>
+                  <div class="toggle_option_slider btn-success"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row card">
+            <div class="card-header" id="headingTwo">
+              <h5 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Select your sauce
+                </button>
+              </h5>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#meal-form">
+              <div class="card-body">
+                <div class="row form-group pic-radio">
+                  <div class="col-md-4 col-sm-6">
+                    <input type="radio" name="sauce-type" id="sauce-meat" value="meat" class="hidden" checked>
+                    <label class="btn btn-primary btn-success" for="sauce-meat"><img src="img/meat.png" alt="..." class="img-check"></label>
+                  </div>
+                  <div class="col-md-4 col-sm-6">
+                    <input type="radio" name="sauce-type" id="sauce-tomato" value="tomato" class="hidden">
+                    <label class="btn btn-primary" for="sauce-tomato"><img src="img/tomato.png" alt="..." class="img-check"></label>
+                  </div>
+                  <div class="col-md-4 col-sm-6">
+                    <input type="radio" name="sauce-type" id="sauce-cream" value="cream" class="hidden">
+                    <label class="btn btn-primary" for="sauce-cream"><img src="img/cream.png" alt="..." class="img-check"></label>
+                  </div>
+                </div>
+                <div class="row form-group toggle_radio">
+                  <input class="form-check-input toggle_option" type="radio" name="sauce-amount" id="sauce-reduced" value="reduced">
+                  <label class="form-check-label col-form-label-lg" for="sauce-reduced">Reduced</label>
+                  <input class="form-check-input toggle_option" type="radio" name="sauce-amount" id="sauce-normal" value="normal" checked>
+                  <label class="form-check-label col-form-label-lg" for="sauce-normal">Regular</label>
+                  <input class="form-check-input toggle_option" type="radio" name="sauce-amount" id="sauce-extra" value="extra">
+                  <label class="form-check-label col-form-label-lg" for="sauce-extra">Extra</label>
+                  <div class="toggle_option_slider btn-success"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <button type="submit" class="btn btn-primary">Send</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col" id="result-collapse">
+        <div class="card card-body">
+          <ul id="response-group" class="list-group">
+            <li class="list-group-item">Meal received you are number <span></span> in line.</li>
+            <li class="list-group-item">Starting your meal. Retrieving pasta.</li>
+            <li class="list-group-item">Pasta is set to cook. <span></span> remaining.</li>
+            <li class="list-group-item">Pasta cooked. Retrieving sauce.</li>
+            <li class="list-group-item">Final cook and mix. <span></span> remaining.</li>
+            <li class="list-group-item">Meal ready. Go pick up!</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <div id='alert-root'></div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="http://static.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js"></script>
+  <script src="http://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
+  <script src="./timer.js"></script>
+  <script src="./main.js"></script>
+</body>
+</html>

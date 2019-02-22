@@ -1,0 +1,5 @@
+int64 distance
+bool sleep
+---
+bool success
+string message

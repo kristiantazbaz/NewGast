@@ -1,0 +1,19 @@
+<launch>
+  <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" />
+  <node name="sauce1" pkg="gastronomous" type="stepper_server.py" output="screen">
+      <remap from="move" to="sauce1/move"/>
+      <remap from="sleep" to="sauce1/sleep"/>
+      <param name="stepPin" type="int" value="24" />
+      <param name="dirPin" type="int" value="23" />
+      <param name="sleepPin" type="int" value="25" />
+  </node>
+  <node name="pasta1" pkg="gastronomous" type="stepper_server.py" output="screen">
+      <remap from="move" to="pasta1/move"/>
+      <remap from="sleep" to="pasta1/sleep"/>
+      <param name="stepPin" type="int" value="13" />
+      <param name="dirPin" type="int" value="12" />
+      <param name="sleepPin" type="int" value="16" />
+  </node>
+  <node name="webserver" pkg="gastronomous" type="webserver.py" output="screen" />
+  <node name="actionserver" pkg="gastronomous" type="action_server.py" output="screen" />
+</launch>

@@ -1,0 +1,9 @@
+string pastaType
+string pastaAmount
+string sauceType
+string sauceAmount
+---
+string topic
+int64 lineNum
+bool success
+string message

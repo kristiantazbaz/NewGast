@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>gastronomous</name>
+  <version>0.0.0</version>
+  <description>The gastronomous package</description>
+  <maintainer email="kdorsel@gmail.com">Kassym Dorsel</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <!-- Build/Exec Depends -->
+  <depend>std_srvs</depend>
+  <depend>std_msgs</depend>
+  <depend>rospy</depend>
+
+  <!-- Build Depends -->
+  <build_depend>message_generation</build_depend>
+
+  <!-- Exec Depends -->
+  <exec_depend>message_runtime</exec_depend>
+
+  <!-- Export Depends -->
+  <build_export_depend>message_runtime</build_export_depend>
+</package>
